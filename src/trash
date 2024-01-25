@@ -1,0 +1,45 @@
+import { Form } from 'react-bootstrap'
+import { useRef } from 'react';
+import './index.css'
+
+
+
+function App() {
+  const searchInput = useRef(null);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(seachInput.value)
+
+  };
+
+  
+
+  return (
+    <div className='container'>
+      
+     <h1 className='title'>Image Search</h1>
+     <div className="seachsection">
+      <form onSubmit={handleSearch}>
+      <Form.Control 
+      type="search" 
+      placeholder="type something to serach"
+      className='search-input'
+      ref={searchInput} 
+      />
+
+      </form>
+    
+     </div>
+    <div className='filters'>
+      <div>nature</div>
+      <div>Birds</div>
+      <div>cats</div>
+      <div>Shoes</div>
+
+    </div>
+    </div>
+  )
+}
+
+export default App
